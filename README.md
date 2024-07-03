@@ -11,6 +11,8 @@ SQL,顧名思義是一種結構化的程式語言，用於在關聯式資料庫�
 
 Employee資料表：
 
+資料欄位:Fname, Lname, Ssn, Bdate, Address, Sex, Salary, Super_ssn, Dno
+
 Fname	Lname	Ssn	Bdate	Address	Sex	Salary	Super_ssn	Dno
 
 John	Smith	123456789	1965-01-09	731 Fondren, Houston, TX	M	30000	333445555	5
