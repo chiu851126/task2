@@ -51,7 +51,7 @@ precision: 0.6822
 recall: 0.5984
 F1: 0.6376
 
-結論:加入SMOTE生成資料，使得覆蓋率提高，透過PR曲線圖(![alt text](<Precision-Recall Curve_smote.png>))分析，顯然得出LightGBM模型>XGB模型>RandomForest模型>KNN模型>LogisticRegression模型。
+結論:加入SMOTE生成資料，使得覆蓋率提高，透過PR曲線圖分析，顯然得出LightGBM模型>XGB模型>RandomForest模型>KNN模型>LogisticRegression模型。(![alt text](<Precision-Recall Curve_smote.png>))
 -------------------------------------------------------------------------------------------------
 測試資料
 類別型態:
