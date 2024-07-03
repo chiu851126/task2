@@ -42,17 +42,21 @@ Jennifer	Wallace	987654321	43000
 
 最大缺點：1.時常覺得自己努力不夠，感到懊惱。2.我是一位心思縝密的人，怕因為某個專案太趕，無法達預期所望。3.我個人是一位內向的人，時常怕麻煩到人，但我還是會鼓勵自已勇於面對及溝通，不管是工作以及生活中，讓自己開放一點，終究會得到不同的收穫。
 
+
 Task 2: Python model development
 
 訓練資料
 
+
 資料前處理
+
 
 類別型態:
 
 Geography:類別型態轉數值(nominal)，使用onehotencoding進行轉換
 
 Gender:類別型態轉數值型態(binary)，使用onehotencoding進行轉換
+
 
 數值型態:
 
@@ -68,6 +72,7 @@ EstimatedSalary:因數值過大，使用資料標準化進行處理
 
 Exited:由於資料筆數相差太遠，使得資料不平衡，所以使用SMOTE生成進行訓練
 
+
 實驗結果
 
 資料筆數:原本165034筆，刪完離群值(Age:6394,CreditScore:240)，總共158400筆
@@ -81,6 +86,7 @@ Exited:由於資料筆數相差太遠，使得資料不平衡，所以使用SMOT
 交叉驗證(CV):10倍
 
 評估指標:精確率、召回率、F1測量
+
 
 SMOTE生成出來結果:
 
@@ -134,16 +140,20 @@ recall: 0.5984
 
 F1: 0.6376
 
-結論:加入SMOTE生成資料，使得覆蓋率提高，透過PR曲線圖分析，顯然得出LightGBM模型>XGB模型>RandomForest模型>KNN模型>LogisticRegression模型。![alt text](<Precision-Recall Curve_smote.png>)
+結論:加入SMOTE生成資料，使得覆蓋率提高，透過PR曲線圖分析，顯然得出LightGBM模型>XGB模型>RandomForest模型>KNN模型>LogisticRegression模型。
+
+![alt text](<Precision-Recall Curve_smote.png>)
 
 -------------------------------------------------------------------------------------------------
 測試資料
+
 
 類別型態:
 
 Geography:類別型態轉數值(nominal)，使用onehotencoding進行轉換
 
 Gender:類別型態轉數值型態(binary)，使用onehotencoding進行轉換
+
 
 數值型態:
 
@@ -156,6 +166,7 @@ Tenure:因數值過大，使用資料標準化進行處理
 Balance:因數值過大，使用資料標準化進行處理
 
 EstimatedSalary:因數值過大，使用資料標準化進行處理
+
 
 實驗結果
 
