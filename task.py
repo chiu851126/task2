@@ -17,6 +17,7 @@ from sklearn.neighbors import KNeighborsClassifier
 from sklearn.svm import SVC
 from sklearn.tree import DecisionTreeClassifier 
 from sklearn.ensemble import RandomForestClassifier
+from lightgbm import LGBMClassifier
 from xgboost import XGBClassifier
 #from lightgbm import LGBMClassifier
 #from catboost import CatBoostClassifier
@@ -43,21 +44,24 @@ sns.barplot(x = train['Geography'].value_counts().index, y = train['Geography'].
 plt.title('Geography')
 plt.xlabel('Geography')
 plt.ylabel('Counts')
-plt.show()
+plt.savefig("Geography_train.png")
+plt.close()
 
 #年齡
 sns.barplot(x = train['Gender'].value_counts().index, y = train['Gender'].value_counts())
 plt.title('Gender')
 plt.xlabel('Gender')
 plt.ylabel('Counts')
-plt.show()
+plt.savefig("Gender_train.png")
+plt.close()
 
 #CreditScore
 sns.histplot(train['CreditScore'], binwidth=10)
 plt.title('CreditScore', fontsize=15)
 plt.xlabel('CreditScore',fontsize=15)
 plt.ylabel('Counts', fontsize=15)
-plt.show()
+plt.savefig("CreditScore_train.png")
+plt.close()
 
 #Age
 #sns.histplot(train['Age'], binwidth=3)
@@ -65,56 +69,64 @@ sns.boxplot(train['Age'])
 plt.title('Age', fontsize=15)
 plt.xlabel('Age',fontsize=15)
 plt.ylabel('Counts', fontsize=15)
-plt.show()
+plt.savefig("Age_train.png")
+plt.close()
 
 #Tenure
 sns.barplot(x = train['Tenure'].value_counts().index, y = train['Tenure'].value_counts())
 plt.title('Tenure')
 plt.xlabel('Tenure')
 plt.ylabel('Counts')
-plt.show()
+plt.savefig("Tenure_train.png")
+plt.close()
 
 #Balance
 sns.histplot(train['Balance'], bins=15, alpha=0.7)
 plt.title('Balance', fontsize=10)
 plt.xlabel('Balance', fontsize=10)
 plt.ylabel('Counts', fontsize=10)
-plt.show()
+plt.savefig("Balance_train.png")
+plt.close()
 
 #NumOfProducts
 sns.barplot(x = train['NumOfProducts'].value_counts().index, y = train['NumOfProducts'].value_counts())
 plt.title('NumOfProducts')
 plt.xlabel('NumOfProducts')
 plt.ylabel('Counts')
-plt.show()
+plt.savefig("NumOfProducts_train.png")
+plt.close()
 
 #HasCrCard
 sns.barplot(x = train['HasCrCard'].value_counts().index, y = train['HasCrCard'].value_counts())
 plt.title('HasCrCard')
 plt.xlabel('HasCrCard')
 plt.ylabel('Counts')
-plt.show()
+plt.savefig("HasCrCard_train.png")
+plt.close()
 
 #IsActiveMember
 sns.barplot(x = train['IsActiveMember'].value_counts().index, y = train['IsActiveMember'].value_counts())
 plt.title('IsActiveMember')
 plt.xlabel('IsActiveMember')
 plt.ylabel('Counts')
-plt.show()
+plt.savefig("IsActiveMember_train.png")
+plt.close()
 
 #EstimatedSalary
 sns.histplot(train['EstimatedSalary'], bins=15, alpha=0.7)
 plt.title('EstimatedSalary')
 plt.xlabel('EstimatedSalary')
 plt.ylabel('Counts')
-plt.show()
+plt.savefig("EstimatedSalary_train.png")
+plt.close()
 
 #Exited
 sns.barplot(x = train['Exited'].value_counts().index, y = train['Exited'].value_counts())
 plt.title('Exited')
 plt.xlabel('Exited')
 plt.ylabel('Counts')
-plt.show()
+plt.savefig("Exited_train.png")
+plt.close()
 
 #%% test
 #資料欄位類別型態(畫長條圖)
@@ -123,21 +135,24 @@ sns.barplot(x = test['Geography'].value_counts().index, y = test['Geography'].va
 plt.title('Geography')
 plt.xlabel('Geography')
 plt.ylabel('Counts')
-plt.show()
+plt.savefig("Geography_test.png")
+plt.close()
 
 #年齡
 sns.barplot(x = test['Gender'].value_counts().index, y = test['Gender'].value_counts())
 plt.title('Gender')
 plt.xlabel('Gender')
 plt.ylabel('Counts')
-plt.show()
+plt.savefig("Gender_test.png")
+plt.close()
 
 #CreditScore
 sns.histplot(test['CreditScore'], binwidth=10)
 plt.title('CreditScore', fontsize=15)
 plt.xlabel('CreditScore',fontsize=15)
 plt.ylabel('Counts', fontsize=15)
-plt.show()
+plt.savefig("CreditScore_test.png")
+plt.close()
 
 #Age
 #sns.histplot(train['Age'], binwidth=3)
@@ -145,49 +160,56 @@ sns.boxplot(test['Age'])
 plt.title('Age', fontsize=15)
 plt.xlabel('Age',fontsize=15)
 plt.ylabel('Counts', fontsize=15)
-plt.show()
+plt.savefig("Age_test.png")
+plt.close()
 
 #Tenure
 sns.barplot(x = test['Tenure'].value_counts().index, y = test['Tenure'].value_counts())
 plt.title('Tenure')
 plt.xlabel('Tenure')
 plt.ylabel('Counts')
-plt.show()
+plt.savefig("Tenure_test.png")
+plt.close()
 
 #Balance
 sns.histplot(test['Balance'], bins=15, alpha=0.7)
 plt.title('Balance', fontsize=10)
 plt.xlabel('Balance', fontsize=10)
 plt.ylabel('Counts', fontsize=10)
-plt.show()
+plt.savefig("Balance_test.png")
+plt.close()
 
 #NumOfProducts
 sns.barplot(x = test['NumOfProducts'].value_counts().index, y = test['NumOfProducts'].value_counts())
 plt.title('NumOfProducts')
 plt.xlabel('NumOfProducts')
 plt.ylabel('Counts')
-plt.show()
+plt.savefig("NumOfProducts_test.png")
+plt.close()
 
 #HasCrCard
 sns.barplot(x = test['HasCrCard'].value_counts().index, y = test['HasCrCard'].value_counts())
 plt.title('HasCrCard')
 plt.xlabel('HasCrCard')
 plt.ylabel('Counts')
-plt.show()
+plt.savefig("HasCrCard_test.png")
+plt.close()
 
 #IsActiveMember
 sns.barplot(x = test['IsActiveMember'].value_counts().index, y = test['IsActiveMember'].value_counts())
 plt.title('IsActiveMember')
 plt.xlabel('IsActiveMember')
 plt.ylabel('Counts')
-plt.show()
+plt.savefig("IsActiveMember_test.png")
+plt.close()
 
 #EstimatedSalary
 sns.histplot(test['EstimatedSalary'], bins=15, alpha=0.7)
 plt.title('EstimatedSalary')
 plt.xlabel('EstimatedSalary')
 plt.ylabel('Counts')
-plt.show()
+plt.savefig("EstimatedSalary_test.png")
+plt.close()
 
 #%% train資料前處理
 
@@ -215,7 +237,7 @@ for q in train[['Age', 'CreditScore']]:
 onehotencoder = OneHotEncoder()
 train['Geography'] = onehotencoder.fit_transform(train[['Geography']]).toarray()
 
-#年齡 類別型態轉數值型態(binary)
+#性別 類別型態轉數值型態(binary)
 train['Gender'] = onehotencoder.fit_transform(train[['Gender']]).toarray()
 
 #建立MinMaxScaler物件
@@ -232,41 +254,40 @@ sns.histplot(train['CreditScore'], bins=15, alpha=0.7)
 plt.title('CreditScore', fontsize=15)
 plt.xlabel('CreditScore',fontsize=15)
 plt.ylabel('Counts', fontsize=15)
-plt.show()
+plt.savefig("CreditScore_train_DP.png")
+plt.close()
 
 #Age
 sns.histplot(train['Age'], bins=15, alpha=0.7)
 plt.title('Age', fontsize=15)
 plt.xlabel('Age',fontsize=15)
 plt.ylabel('Counts', fontsize=15)
-plt.show()
+plt.savefig("Age_train_DP.png")
+plt.close()
 
 #Tenure
 sns.histplot(train['Tenure'], bins=15, alpha=0.7)
 plt.title('Tenure')
 plt.xlabel('Tenure')
 plt.ylabel('Counts')
-plt.show()
+plt.savefig("Tenure_train_DP.png")
+plt.close()
 
 #Balance
 sns.histplot(train['Balance'], bins=15, alpha=0.7)
 plt.title('Balance', fontsize=10)
 plt.xlabel('Balance', fontsize=10)
 plt.ylabel('Counts', fontsize=10)
-plt.show()
+plt.savefig("Balance_train_DP.png")
+plt.close()
 
 #EstimatedSalary
 sns.histplot(train['EstimatedSalary'], bins=15, alpha=0.7)
 plt.title('EstimatedSalary')
 plt.xlabel('EstimatedSalary')
 plt.ylabel('Counts')
-plt.show()
-
-sns.barplot(x = train['Exited'].value_counts().index, y = train['Exited'].value_counts())
-plt.title('Exited')
-plt.xlabel('Exited')
-plt.ylabel('Counts')
-plt.show()
+plt.savefig("EstimatedSalary_train_DP.png")
+plt.close()
 
 #%% test資料前處理
 
@@ -291,35 +312,40 @@ sns.histplot(test['CreditScore'], bins=15, alpha=0.7)
 plt.title('CreditScore', fontsize=15)
 plt.xlabel('CreditScore',fontsize=15)
 plt.ylabel('Counts', fontsize=15)
-plt.show()
+plt.savefig("CreditScore_test_DP.png")
+plt.close()
 
 #Age
 sns.histplot(test['Age'], bins=15, alpha=0.7)
 plt.title('Age', fontsize=15)
 plt.xlabel('Age',fontsize=15)
 plt.ylabel('Counts', fontsize=15)
-plt.show()
+plt.savefig("Age_test_DP.png")
+plt.close()
 
 #Tenure
 sns.histplot(test['Tenure'], bins=15, alpha=0.7)
 plt.title('Tenure')
 plt.xlabel('Tenure')
 plt.ylabel('Counts')
-plt.show()
+plt.savefig("Tenure_test_DP.png")
+plt.close()
 
 #Balance
 sns.histplot(test['Balance'], bins=15, alpha=0.7)
 plt.title('Balance', fontsize=10)
 plt.xlabel('Balance', fontsize=10)
 plt.ylabel('Counts', fontsize=10)
-plt.show()
+plt.savefig("Balance_test_DP.png")
+plt.close()
 
 #EstimatedSalary
 sns.histplot(test['EstimatedSalary'], bins=15, alpha=0.7)
 plt.title('EstimatedSalary')
 plt.xlabel('EstimatedSalary')
 plt.ylabel('Counts')
-plt.show()
+plt.savefig("Exited_test_DP.png")
+plt.close()
 
 #%%
 X = train.drop(['id', 'CustomerId', 'Surname', 'Exited'], axis = 1)
@@ -333,12 +359,12 @@ models.append(('LogisticRegression', LogisticRegression(random_state = 12345)))
 models.append(('KNN', KNeighborsClassifier()))
 models.append(('RandomForest', RandomForestClassifier(random_state = 12345)))
 #models.append(('SVM', SVC(kernel= 'linear', gamma='auto', random_state = 12345)))
-#models.append(('XGB', XGBClassifier(random_state = 12345)))
+models.append(('XGB', XGBClassifier(random_state = 12345)))
+models.append(("LightGBM", LGBMClassifier(random_state=123456)))
+
 
 alog_1 = []
 alog_2 = []
-alog_1_neg = []
-alog_2_neg = []
 
 for name, model in models:
     
@@ -368,6 +394,7 @@ arr_1_2 = np.array(alog_1[1]).T
 arr_1_3 = np.array(alog_1[2]).T
 arr_1_4 = np.array(alog_1[3]).T
 arr_1_5 = np.array(alog_1[4]).T
+
 arr_2_1 = np.array(alog_2[0]).T
 arr_2_2 = np.array(alog_2[1]).T
 arr_2_3 = np.array(alog_2[2]).T
@@ -384,8 +411,8 @@ auc_score_4 = auc(arr_2_5, arr_1_5)
 plt.plot(arr_2_1, arr_1_1, color='b', label=f'LogisticRegression AUC = {auc_score:.2f}')
 plt.plot(arr_2_2, arr_1_2, color='g', label=f'KNN AUC = {auc_score_1:.2f}')
 plt.plot(arr_2_3, arr_1_3, color='r', label=f'RandomForest AUC = {auc_score_2:.2f}')
-plt.plot(arr_2_4, arr_1_4, color='m', label=f'SVM AUC = {auc_score_3:.2f}')
-plt.plot(arr_2_5, arr_1_5, color='c', label=f'XGB AUC = {auc_score_4:.2f}')
+plt.plot(arr_2_4, arr_1_4, color='m', label=f'XGB AUC = {auc_score_3:.2f}')
+plt.plot(arr_2_5, arr_1_5, color='c', label=f'LightGBM AUC = {auc_score_4:.2f}')
 
 plt.xlabel('Recall (Class=1)')
 plt.ylabel('Precision (Class=1)')
@@ -399,24 +426,23 @@ plt.fill_between(arr_2_3, arr_1_3, alpha=0.1, color='r')  # 填充PR曲線下的
 plt.fill_between(arr_2_4, arr_1_4, alpha=0.1, color='m')  # 填充PR曲線下的面積
 plt.fill_between(arr_2_5, arr_1_5, alpha=0.1, color='c')  # 填充PR曲線下的面積
 plt.legend(loc='lower left')
-plt.show()
+plt.savefig("Precision-Recall Curve.png")
+plt.close()
 
 #%%
-'''
+
 #SMOTE
 oversample = SMOTE()
 X_smote, y_smote = oversample.fit_resample(X_train,y_train)
 
 alog_1_sm = []
 alog_2_sm = []
-alog_1_neg = []
-alog_2_neg = []
 
 for name, model_sm in models:
     
     model_sm.fit(X_smote, y_smote)
     y_pred_sm = model_sm.predict(X_test)
-    val_accuracy_sm = cross_val_score(model, X_smote, y_smote, cv = 10, scoring = 'accuracy') #10倍交叉驗證
+    val_accuracy_sm = cross_val_score(model_sm, X_smote, y_smote, cv = 10, scoring = 'accuracy') #10倍交叉驗證
     accuracy_sm = accuracy_score(y_test, y_pred_sm)
     precision_sm = precision_score(y_test, y_pred_sm) #精確率
     recall_sm = recall_score(y_test, y_pred_sm)       #召回率
@@ -440,6 +466,7 @@ arr_1_2_sm = np.array(alog_1_sm[1]).T
 arr_1_3_sm = np.array(alog_1_sm[2]).T
 arr_1_4_sm = np.array(alog_1_sm[3]).T
 arr_1_5_sm = np.array(alog_1_sm[4]).T
+
 arr_2_1_sm = np.array(alog_2_sm[0]).T
 arr_2_2_sm = np.array(alog_2_sm[1]).T
 arr_2_3_sm = np.array(alog_2_sm[2]).T
@@ -447,30 +474,55 @@ arr_2_4_sm = np.array(alog_2_sm[3]).T
 arr_2_5_sm = np.array(alog_2_sm[4]).T
 #%%
  
-auc_score_sm = auc(arr_2_1, arr_1_1)
-auc_score_1_sm = auc(arr_2_2, arr_1_2)
-auc_score_2_sm= auc(arr_2_3, arr_1_3)
-auc_score_3_sm = auc(arr_2_4, arr_1_4)
-auc_score_4_sm = auc(arr_2_5, arr_1_5)
+auc_score_sm = auc(arr_2_1_sm, arr_1_1_sm)
+auc_score_1_sm = auc(arr_2_2_sm, arr_1_2_sm)
+auc_score_2_sm= auc(arr_2_3_sm, arr_1_3_sm)
+auc_score_3_sm = auc(arr_2_4_sm, arr_1_4_sm)
+auc_score_4_sm = auc(arr_2_5_sm, arr_1_5_sm)
 
-plt.plot(arr_2_1_sm, arr_1_1_sm, color='b', label=f'LogisticRegression AUC = {auc_score:.2f}')
-plt.plot(arr_2_2_sm, arr_1_2_sm, color='g', label=f'KNN AUC = {auc_score_1:.2f}')
-plt.plot(arr_2_3_sm, arr_1_3_sm, color='r', label=f'RandomForest AUC = {auc_score_1:.2f}')
-plt.plot(arr_2_4_sm, arr_1_4_sm, color='m', label=f'SVM AUC = {auc_score_1:.2f}')
-plt.plot(arr_2_5_sm, arr_1_5_sm, color='c', label=f'XGB AUC = {auc_score_1:.2f}')
+plt.plot(arr_2_1_sm, arr_1_1_sm, color='b', label=f'LogisticRegression AUC = {auc_score_sm:.2f}')
+plt.plot(arr_2_2_sm, arr_1_2_sm, color='g', label=f'KNN AUC = {auc_score_1_sm:.2f}')
+plt.plot(arr_2_3_sm, arr_1_3_sm, color='r', label=f'RandomForest AUC = {auc_score_2_sm:.2f}')
+plt.plot(arr_2_4_sm, arr_1_4_sm, color='m', label=f'XGB AUC = {auc_score_3_sm:.2f}')
+plt.plot(arr_2_5_sm, arr_1_5_sm, color='c', label=f'LightGBM AUC = {auc_score_4_sm:.2f}')
 
 plt.xlabel('Recall (Class=1)')
 plt.ylabel('Precision (Class=1)')
-plt.title('Precision-Recall Curve (Class=1)')
+plt.title('Precision-Recall Curve_smote(Class=1)')
 plt.xlim([0.0, 1.0])
 plt.ylim([0.0, 1.0])
 plt.grid(True)
 plt.fill_between(arr_2_1_sm, arr_1_1_sm, alpha=0.1, color='b')  # 填充PR曲線下的面積
 plt.fill_between(arr_2_2_sm, arr_1_2_sm, alpha=0.1, color='g')  # 填充PR曲線下的面積
-
 plt.fill_between(arr_2_3_sm, arr_1_3_sm, alpha=0.1, color='r')  # 填充PR曲線下的面積
 plt.fill_between(arr_2_4_sm, arr_1_4_sm, alpha=0.1, color='m')  # 填充PR曲線下的面積
 plt.fill_between(arr_2_5_sm, arr_1_5_sm, alpha=0.1, color='c')  # 填充PR曲線下的面積
 plt.legend(loc='lower left')
-plt.show()
-'''
+plt.savefig("Precision-Recall Curve_smote.png")
+plt.close()
+
+#%% test
+y_pred_Exited = []
+for name, model_sm_test in models:
+    model_sm_test.fit(X_smote, y_smote)
+    y_pred_sm_test = model_sm_test.predict(X1)
+    y_pred_Exited.append(y_pred_sm_test)
+#%%
+y_pred_Exited_1 = np.array(y_pred_Exited[0])
+y_pred_Exited_2 = np.array(y_pred_Exited[1])
+y_pred_Exited_3 = np.array(y_pred_Exited[2])
+y_pred_Exited_4 = np.array(y_pred_Exited[3])
+y_pred_Exited_5 = np.array(y_pred_Exited[4])
+
+#%%
+n = ["Exited"]
+df1 = pd.DataFrame(y_pred_Exited_1, columns=n)
+df1.to_csv('y_pred_Exited_LR.csv')
+df2 = pd.DataFrame(y_pred_Exited_2, columns=n)
+df2.to_csv('y_pred_Exited_KNN.csv')
+df3 = pd.DataFrame(y_pred_Exited_3, columns=n)
+df3.to_csv('y_pred_Exited_RF.csv')
+df4 = pd.DataFrame(y_pred_Exited_4, columns=n)
+df4.to_csv('y_pred_Exited_XGB.csv')
+df5 = pd.DataFrame(y_pred_Exited_5, columns=n)
+df5.to_csv('y_pred_Exited_LightGBM.csv')
