@@ -24,6 +24,8 @@ Select *
 
 From Employee;
 
+輸出表格:
+
 Fname	Lname	Ssn	Bdate	Address	Sex	Salary	Super_ssn	Dno
 
 John	Smith	123456789	1965-01-09	731 Fondren, Houston, TX	M	30000	333445555	5
@@ -41,6 +43,8 @@ SELECT fname, lname, ssn, salary
 FROM employee
 
 WHERE sex = 'F';
+
+輸出表格:
 
 Fname	Lname	Ssn	Salary
 
@@ -69,11 +73,11 @@ Jennifer	Wallace	987654321	43000
 
 最大缺點：
 
-1.時常覺得自己努力不夠，感到懊惱。
+1. 時常覺得自己努力不夠，感到懊惱。
 
-2.我是一位心思縝密的人，怕因為某個專案太趕，無法達預期所望。
+2. 我是一位心思縝密的人，怕因為某個專案太趕，無法達預期所望。
 
-3.我個人是一位內向的人，時常怕麻煩到人，但我還是會鼓勵自已勇於面對及溝通，不管是工作以及生活中，讓自己開放一點，終究會得到不同的收穫。
+3. 我個人是一位內向的人，時常怕麻煩到人，但我還是會鼓勵自已勇於面對及溝通，不管是工作以及生活中，讓自己開放一點，終究會得到不同的收穫。
 
 
 Task 2: Python model development
@@ -104,17 +108,17 @@ Task 2: Python model development
 
 實驗結果
 
-資料筆數:原本165034筆，刪完離群值(Age:6394,CreditScore:240)，總共158400筆
+*資料筆數:原本165034筆，刪完離群值(Age:6394,CreditScore:240)，總共158400筆
 
-首先將訓練資料欄位裡的'id', 'CustomerId', 'Surname', 'Exited'進行移除
+*首先將訓練資料欄位裡的'id', 'CustomerId', 'Surname', 'Exited'進行移除
 
-資料切分:80%訓練，20%測試(8:2)
+*資料切分:80%訓練，20%測試(8:2)
 
-使用五種機器學習演算法:LogisticRegression、KNN、RandomForest、XGB、LightGBM
+*使用五種機器學習演算法:LogisticRegression、KNN、RandomForest、XGB、LightGBM
 
-交叉驗證(CV):10倍
+*交叉驗證(CV):10倍
 
-評估指標:精確率、召回率、F1測量
+*評估指標:精確率、召回率、F1測量
 
 SMOTE生成出來結果:
 
@@ -195,13 +199,13 @@ F1: 0.6376
 
 實驗結果
 
-資料筆數:總共110023筆
+*資料筆數:總共110023筆
 
-首先將訓練資料欄位裡的'id', 'CustomerId', 'Surname'進行移除
+*首先將訓練資料欄位裡的'id', 'CustomerId', 'Surname'進行移除
 
-資料切分:80%訓練，20%測試(8:2)
+*資料切分:80%訓練，20%測試(8:2)
 
-使用五種機器學習演算法預測:LogisticRegression、KNN、RandomForest、XGB、LightGBM
+*使用五種機器學習演算法預測:LogisticRegression、KNN、RandomForest、XGB、LightGBM
 
 預測之結果:預測'Exited'的機率
 
