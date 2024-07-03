@@ -5,13 +5,16 @@ Task 1: General Questions
 Python,因為使用起來淺顯易懂，在撰寫操作運行上方便許多，及時出現程式錯誤，能更有效的修正，且在應用領域上也很廣泛，像是網路爬蟲、網頁開發、人工智慧、資料科學/分析及視覺化的呈現等，都是能在Python程式語言中，讓開發人員能夠更有效的完成更多的工作。
 2.	Provide an example of when you used SQL to extract data.
 SQL,顧名思義是一種結構化的程式語言，用於在關聯式資料庫中儲存和處理資訊的程式設計語言。例如:1.產生資料庫中的資料表，2.定義資料表欄位和資料型態，3.建立表格之間有無關聯性，4. 將資料進行處理有四種基本查詢動作，即新增、修改、刪除、查詢，5.將資料進行統計。基本語法指令：SELECT、FROM、WHERE，以下是提取資料的範例：
+
 Employee資料表：
 Fname	Lname	Ssn	Bdate	Address	Sex	Salary	Super_ssn	Dno
 John	Smith	123456789	1965-01-09	731 Fondren, Houston, TX	M	30000	333445555	5
 Franklin	Wong	333445555	1955-12-08	638 Voss, Houston, TX	M	40000	888665555	5
 Alicia	Zelaya	999887777	1968-01-19	3321 Castle, Spring, TX	F	25000	987654321	4
 Jennifer	Wallace	987654321	1941-06-20	291 Berry, Bellaire, TX	F	43000	888665555	4
+
 例如1：要找出所有顧客的所有欄位和所有屬性。
+
 Select *
 From Employee;
 
@@ -22,6 +25,7 @@ Alicia	Zelaya	999887777	1968-01-19	3321 Castle, Spring, TX	F	25000	987654321	4
 Jennifer	Wallace	987654321	1941-06-20	291 Berry, Bellaire, TX	F	43000	888665555	4
 
 例如2：employee 表格中的所有女性，選取並顯示其姓名、社會安全碼、薪資
+
 SELECT fname, lname, ssn, salary
 FROM employee
 WHERE sex = 'F'
